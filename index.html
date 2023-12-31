@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year Generator</title>
+    <!-- Add Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #generator {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="generator" class="container">
+        <h2 class="mb-4">Happy New Year</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Enter your name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="generateWish()">Generate Wish</button>
+        </form>
+        <p class="mt-3" id="wish"></p>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js CDN (required for Bootstrap JavaScript components) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function generateWish() {
+            var name = document.getElementById('name').value;
+            var wishes = [
+                "Wishing you a year filled with joy, prosperity, and success, [name]!",
+                "May the new year bring you love, happiness, and exciting adventures, [name]!",
+                "Here's to a year full of new opportunities and beautiful moments, [name]!",
+                "Wishing you health, wealth, and all the best in the coming year, [name]!",
+                "May your dreams come true and your days be filled with joy. Happy New Year, [name]!",
+                "May each day of the new year be as bright and beautiful as you are, [name]!",
+                "Wishing you laughter, love, and lots of unforgettable moments in the coming year, [name]!",
+                "May your heart be filled with warmth and your days with happiness. Happy New Year, [name]!",
+                "May the new year bring you endless opportunities for success and growth, [name]!",
+                "Cheers to a year filled with love, laughter, and new achievements. Happy New Year, [name]!",
+                "May the coming year be the start of great things in your life, [name]!",
+                "Wishing you peace, love, and success in the new year and beyond, [name]!",
+                "May your dreams soar to new heights and your efforts be rewarded. Happy New Year, [name]!",
+                "Here's to new beginnings and exciting adventures in the upcoming year, [name]!",
+                "May the joy of the season fill your heart and home. Happy New Year, [name]!",
+            ];
+
+            var randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+            var personalizedWish = randomWish.replace("[name]", name);
+
+            document.getElementById('wish').innerHTML = personalizedWish;
+        }
+    </script>
+</body>
+</html>
